@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class HelloConsole {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Gasto[] gastos = new Gasto[100];
+        int numGastos = 0;
         int opcion;
         int opcionGastos = 0;
 
@@ -45,11 +47,27 @@ public class HelloConsole {
                         System.out.println("Introduce metodo de pago:");
                         String metodoPago = sc.nextLine();
 
+                        Gasto g = new Gasto();
+                        g.descripcion = descripcion;
+                        g.importe = importe;
+                        g.categoria = categoria;
+                        g.fecha = fecha;
+                        g.metodoPago = metodoPago;
+
+                        gastos[numGastos] = g;
+                        numGastos++;
+
+                        System.out.println("Gasto guardado correctamente");
+
+                        System.out.println("Gasto creado correctamente");
+
                         System.out.println("Has escrito: " + descripcion);
                         System.out.println("El importe es: " + importe);
                         System.out.println("Categoria: " + categoria);
                         System.out.println("Fecha: " + fecha);
                         System.out.println("Metodo de Pago:" + metodoPago);
+
+                       
                     }
 
                 } while (opcionGastos != 0);
