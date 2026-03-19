@@ -31,6 +31,25 @@ public class HelloConsole {
                     sc.nextLine();
                     if (opcionGastos == 1) {
                         System.out.println("Añadir gasto");
+
+                        System.out.println("Introduce descripcion:");
+                        String descripcion = sc.nextLine();
+
+                        System.out.println("Introduce importe:");
+                        double importe = sc.nextDouble();
+                        sc.nextLine();
+                        System.out.println("Introduce categoria:");
+                        String categoria = sc.nextLine();
+                        System.out.println("Introduce fecha:");
+                        String fecha = sc.nextLine();
+                        System.out.println("Introduce metodo de pago:");
+                        String metodoPago = sc.nextLine();
+
+                        System.out.println("Has escrito: " + descripcion);
+                        System.out.println("El importe es: " + importe);
+                        System.out.println("Categoria: " + categoria);
+                        System.out.println("Fecha: " + fecha);
+                        System.out.println("Metodo de Pago:" + metodoPago);
                     }
 
                 } while (opcionGastos != 0);
