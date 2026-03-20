@@ -43,22 +43,73 @@ public class HelloConsole {
                         double importe = sc.nextDouble();
                         sc.nextLine();
 
-                        System.out.println("Introduce categoria:");
-                        String categoria = sc.nextLine();
                         System.out.println("Introduce fecha:");
                         String fecha = sc.nextLine();
-                        System.out.println("Introduce metodo de pago:");
-                        String metodo = sc.nextLine();
+                        System.out.println("Introduce origen:");
+                        String origen = sc.nextLine();
 
                         Ingreso i = new Ingreso();
                         i.descripcion = descripcion;
                         i.importe = importe;
-                        i.categoria = categoria;
                         i.fecha = fecha;
-                        i.metodo = metodo;
+                        i.origen = origen;
 
                         ingresos[numIngresos] = i;
                         numIngresos++;
+                        System.out.println("Ingreso guardado correctamente");
+                    }
+                    if (opcionIngresos == 4) {
+                        System.out.println("LISTA DE INGRESOS");
+
+                        for (int i = 0; i < numIngresos; i++) {
+                            System.out.println(
+                                    ingresos[i].descripcion + " - " +
+                                            ingresos[i].importe + " - " +
+                                            ingresos[i].fecha + " - " +
+                                            ingresos[i].origen
+                            );
+                        }
+                    }
+                    if (opcionIngresos == 2) {
+                        System.out.println("EDITAR INGRESO");
+
+                        for (int i = 0; i < numIngresos; i++) {
+                            System.out.println(i + " - " +
+                                    ingresos[i].descripcion + " - " +
+                                    ingresos[i].importe);
+                        }
+
+                        System.out.println("Que ingreso quieres editar?");
+                        int posicion = sc.nextInt();
+                        sc.nextLine();
+
+                        System.out.println("Introduce el nuevo importe:");
+                        double nuevoImporte = sc.nextDouble();
+                        sc.nextLine();
+
+                        ingresos[posicion].importe = nuevoImporte;
+
+                        System.out.println("Ingreso editado correctamente");
+                    }
+                    if (opcionIngresos == 3) {
+                        System.out.println("ELIMINAR INGRESO");
+
+                        for (int i = 0; i < numIngresos; i++) {
+                            System.out.println(i + " - " +
+                                    ingresos[i].descripcion + " - " +
+                                    ingresos[i].importe);
+                        }
+
+                        System.out.println("Que ingreso quieres eliminar?");
+                        int posicionEliminar = sc.nextInt();
+                        sc.nextLine();
+
+                        for (int i = posicionEliminar; i < numIngresos - 1; i++) {
+                            ingresos[i] = ingresos[i + 1];
+                        }
+
+                        numIngresos--;
+                        System.out.println("Ingreso eliminado correctamente");
                     }
                 } while (opcionGastos != 0);
             }
