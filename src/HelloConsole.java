@@ -4,6 +4,9 @@ public class HelloConsole {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Gasto[] gastos = new Gasto[100];
+        Ingreso[] ingresos = new Ingreso[100];
+        int numIngresos = 0;
+        int opcionIngresos;
         int numGastos = 0;
         int opcion;
         int opcionGastos = 0;
@@ -18,6 +21,47 @@ public class HelloConsole {
 
             opcion = sc.nextInt();
             sc.nextLine();
+            if (opcion == 2) {
+                do {
+                    System.out.println("----- MENU INGRESOS -----");
+                    System.out.println("1. Anadir ingreso");
+                    System.out.println("2. Editar ingreso");
+                    System.out.println("3. Eliminar ingreso");
+                    System.out.println("4. Listar ingreso");
+                    System.out.println("0. Volver");
+                    System.out.print("Elige una opcion: ");
+
+                    opcionIngresos = sc.nextInt();
+                    sc.nextLine();
+                    if (opcionIngresos == 1) {
+                        System.out.println("Añadir ingreso");
+
+                        System.out.println("Introduce descripcion:");
+                        String descripcion = sc.nextLine();
+
+                        System.out.println("Introduce importe:");
+                        double importe = sc.nextDouble();
+                        sc.nextLine();
+
+                        System.out.println("Introduce categoria:");
+                        String categoria = sc.nextLine();
+                        System.out.println("Introduce fecha:");
+                        String fecha = sc.nextLine();
+                        System.out.println("Introduce metodo de pago:");
+                        String metodo = sc.nextLine();
+
+                        Ingreso i = new Ingreso();
+                        i.descripcion = descripcion;
+                        i.importe = importe;
+                        i.categoria = categoria;
+                        i.fecha = fecha;
+                        i.metodo = metodo;
+
+                        ingresos[numIngresos] = i;
+                        numIngresos++;
+                    }
+                } while (opcionGastos != 0);
+            }
 
             if (opcion == 1) {
                 do {
