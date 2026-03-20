@@ -21,6 +21,29 @@ public class HelloConsole {
 
             opcion = sc.nextInt();
             sc.nextLine();
+            if (opcion == 3) {
+                System.out.println("RESUMEN FINANCIERO");
+                double totalGastos = 0;
+
+                for (int i = 0; i < numGastos; i++) {
+                    totalGastos = totalGastos + gastos[i].importe;
+                }
+                double totalIngresos = 0;
+                for (int i = 0; i < numIngresos; i++) {
+                    totalIngresos = totalIngresos + ingresos[i].importe;
+                }
+                double saldoTotal = totalIngresos - totalGastos;
+                System.out.println("Total ingresos: " + totalIngresos);
+                System.out.println("Total gastos: " + totalGastos);
+                System.out.println("Saldo total: " + saldoTotal);
+
+                double totalAlimentacion = 0;
+                double totalTransporte = 0;
+                double totalOcio = 0;
+                double totalVivienda = 0;
+                double totalSalud = 0;
+                double totalOtros = 0;
+            }
             if (opcion == 2) {
                 do {
                     System.out.println("----- MENU INGRESOS -----");
