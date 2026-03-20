@@ -1,0 +1,31 @@
+PLAN DE PRUEBAS
+
+1. Añadir gasto
+- Introducir datos correctos → OK
+- Introducir importe negativo → muestra error
+
+2. Editar gasto
+- Posicion correcta → se edita correctamente
+- Posicion incorrecta → muestra error
+
+3. Eliminar gasto
+- Posicion correcta → se elimina correctamente
+- Posicion incorrecta → muestra error
+
+4. Añadir ingreso
+- Datos correctos → OK
+- Importe negativo → muestra error
+
+5. Editar ingreso
+- Posicion correcta → se edita
+- Posicion incorrecta → error
+
+6. Eliminar ingreso
+- Posicion correcta → se elimina
+- Posicion incorrecta → error
+
+7. Resumen financiero
+- Calcula correctamente ingresos, gastos y saldo
+
+8. Listados
+- Muestra correctamente los datos guardados
